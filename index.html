@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./CSS/style.css">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <title>Document</title>
+    <link rel="icon" href="./icon/icon.png">
+    <title>Calculadora</title>
   </head>
-  <body>
+  <body class="d-flex flex-column justify-content-between">
     <header>
-      <nav class="navbar navbar-dark">
+      <nav class="navbar navbar-dark bg-azulmarino">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <i class="bi bi-calculator-fill" width="30" height="24"></i>
@@ -24,22 +25,19 @@
     </header>
     
     <main>
-      <div class="container">
+      <div class="container mt-3 mb-3">
         <!-- Input Container -->
         <div class="row">
-          <div class="display col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-            <!-- <textarea class="form-control text-end" id="exampleFormControlTextarea1" rows="3"></textarea> -->
-            <div class="disp1 text-end align-self-start">12</div>
-            <div class="disp2 text-end align-self-center">+</div>
-            <div class="disp3 text-end align-self-end">12</div>
+          <div class="display col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 bg-light rounded">
+            <div id="pantalla" class="disp3 text-center mt-3 py-3">12+3</div>
             <hr>
             <div class="text-center">Resultado</div>
-            <div class="text-center fs-3">24</div>
+            <div id="resultado" class="text-center fs-3 mb-3">15</div>
           </div>
         </div>
   
         <!-- Buttons -->
-        <div class="row">
+        <div class="row mt-3">
           <div class="d-flex justify-content-around col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
             <button type="button" class="btn btn-warning border" title="Raíz">√</button>
             <button type="button" class="btn btn-warning border" title="Potencia">^</button>
@@ -48,59 +46,45 @@
           </div>
         </div>
         
-        <div class="row">
+        <div class="row mt-3">
           <div class="d-flex justify-content-around col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
             <button type="button" class="btn btn-light border">7</button>
             <button type="button" class="btn btn-light border">8</button>
             <button type="button" class="btn btn-light border">9</button>
-            <button type="button" class="btn btn-warning" title="Multiplicación">*</button>
+            <button type="button" class="btn btn-warning border" title="Multiplicación">*</button>
           </div>
         </div>
   
-        <div class="row">
+        <div class="row mt-3">
           <div class="d-flex justify-content-around col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
             <button type="button" class="btn btn-light border">4</button>
             <button type="button" class="btn btn-light border">5</button>
             <button type="button" class="btn btn-light border">6</button>
-            <button type="button" class="btn btn-warning" title="Resta">-</button>
+            <button type="button" class="btn btn-warning border" title="Resta">-</button>
           </div>
         </div>
   
-        <div class="row">
+        <div class="row mt-3">
           <div class="d-flex justify-content-around col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
             <button type="button" class="btn btn-light border">1</button>
             <button type="button" class="btn btn-light border">2</button>
             <button type="button" class="btn btn-light border">3</button>
-            <button type="button" class="btn btn-warning border-secondary" title="Suma">+</button>
+            <button type="button" class="btn btn-warning border" title="Suma">+</button>
           </div>
         </div>
 
-        <div class="row">
+        <div class="row mt-3">
           <div class="d-flex justify-content-around col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
             <button type="button" class="btn btn-light border">0</button>
             <button type="button" class="btn btn-light border">.</button>
-            <button id="resultado" type="button" class="btn btn-success border" title="Resultado">=</button>
+            <button id="btn-resultado" type="button" class="btn btn-success border" title="Resultado">=</button>
           </div>
         </div>
-        
-        <!-- Primera version de las row -->
-        <!-- <div class="row">
-          <div class="col-1 col-sm-2 col-md-3 col-lg-4"></div>
-  
-          <div class="d-flex justify-content-around col-10 col-sm-8 col-md-6 col-lg-4">
-            <button type="button" class="btn btn-primary">0</button>
-            <button type="button" class="btn btn-primary">.</button>
-            <button id="igual" type="button" class="btn btn-primary">=</button>
-          </div>
-  
-          <div class="col-1 col-sm-2 col-md-3 col-lg-4"></div>
-        </div> -->
   
       </div>
     </main>
-    <br>
-    <br>
-    <footer class="footer py-3">
+
+    <footer class="footer py-3 bg-azulmarino">
       <div class="container-fluid justify-content-center d-flex">
         <span class="text-muted">Desarrollado por Eduardo Moreira</span>
       </div>

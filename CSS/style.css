@@ -1,0 +1,20 @@
+body {
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(5 81 96);
+}
+
+button {
+  width: 60px;
+  height: 40px;
+}
+
+#btn-resultado {
+  width: 150px;
+  height: 40px;
+}
+
+.bg-azulmarino {
+  background-color: rgb(3, 49, 58);
+}
