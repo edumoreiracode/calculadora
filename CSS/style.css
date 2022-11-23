@@ -10,9 +10,8 @@ button {
   height: 40px;
 }
 
-#btn-resultado {
-  width: 150px;
-  height: 40px;
+.display {
+  height: 100px;
 }
 
 .bg-azulmarino {
