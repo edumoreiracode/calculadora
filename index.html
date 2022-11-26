@@ -16,9 +16,9 @@
     <header>
       <nav class="navbar navbar-dark bg-azulmarino">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="index.html">
             <i class="bi bi-calculator-fill" width="30" height="24"></i>
-            Calculadora
+            Calculadora Básica
           </a>
         </div>
       </nav>
@@ -28,52 +28,54 @@
       <div class="container mt-3 mb-3">
         <!-- Input Container -->
         <div class="row">
-          <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 bg-light rounded">
-            <div id="pantalla" class="display d-flex justify-content-center align-items-center"></div>
+          <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 d-flex flex-column align-items-center">
+            
+            <div id="pantalla2" class="display d-flex justify-content-center wrap align-items-center bg-light rounded-top"></div>
+            <div id="pantalla" class="display d-flex justify-content-center align-items-center bg-light rounded-bottom"></div>
           </div>
         </div>
   
         <!-- Buttons -->
         <div class="row mt-3">
           <div class="d-flex justify-content-around col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-            <button type="button" class="btn btn-warning border" title="Raíz">√</button>
-            <button type="button" class="btn btn-warning border" title="Potencia">^</button>
-            <button type="button" class="btn btn-warning border" title="Porcentaje">%</button>
-            <button type="button" class="btn btn-warning border" onclick="mostrarEnPantalla(' / ')">÷</button>
+            <button type="button" class="btn btn-info border" onclick="escribirEnPantalla(' &lpar; ')">(</button>
+            <button type="button" class="btn btn-info border" onclick="escribirEnPantalla(' &rpar; ')">)</button>
+            <button type="button" class="btn btn-secondary border" onclick="deleteUltimo()">⌫</button>
+            <button type="button" class="btn btn-warning border" onclick="escribirEnPantalla(' / ')">÷</button>
           </div>
         </div>
         
         <div class="row mt-3">
           <div class="d-flex justify-content-around col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-            <button type="button" class="btn btn-light border" onclick="mostrarEnPantalla(7)">7</button>
-            <button type="button" class="btn btn-light border" onclick="mostrarEnPantalla(8)">8</button>
-            <button type="button" class="btn btn-light border" onclick="mostrarEnPantalla(9)">9</button>
-            <button type="button" class="btn btn-warning border" onclick="mostrarEnPantalla(' * ')">*</button>
+            <button type="button" class="btn btn-light border" onclick="escribirEnPantalla(7)">7</button>
+            <button type="button" class="btn btn-light border" onclick="escribirEnPantalla(8)">8</button>
+            <button type="button" class="btn btn-light border" onclick="escribirEnPantalla(9)">9</button>
+            <button type="button" class="btn btn-warning border" onclick="escribirEnPantalla(' * ')">×</button>
           </div>
         </div>
   
         <div class="row mt-3">
           <div class="d-flex justify-content-around col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-            <button type="button" class="btn btn-light border" onclick="mostrarEnPantalla(4)">4</button>
-            <button type="button" class="btn btn-light border" onclick="mostrarEnPantalla(5)">5</button>
-            <button type="button" class="btn btn-light border" onclick="mostrarEnPantalla(6)">6</button>
-            <button type="button" class="btn btn-warning border" onclick="mostrarEnPantalla(' - ')">-</button>
+            <button type="button" class="btn btn-light border" onclick="escribirEnPantalla(4)">4</button>
+            <button type="button" class="btn btn-light border" onclick="escribirEnPantalla(5)">5</button>
+            <button type="button" class="btn btn-light border" onclick="escribirEnPantalla(6)">6</button>
+            <button type="button" class="btn btn-warning border" onclick="escribirEnPantalla(' - ')">-</button>
           </div>
         </div>
   
         <div class="row mt-3">
           <div class="d-flex justify-content-around col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-            <button type="button" class="btn btn-light border" onclick="mostrarEnPantalla(1)">1</button>
-            <button type="button" class="btn btn-light border" onclick="mostrarEnPantalla(2)">2</button>
-            <button type="button" class="btn btn-light border" onclick="mostrarEnPantalla(3)">3</button>
-            <button type="button" class="btn btn-warning border" onclick="mostrarEnPantalla(' + ')">+</button>
+            <button type="button" class="btn btn-light border" onclick="escribirEnPantalla(1)">1</button>
+            <button type="button" class="btn btn-light border" onclick="escribirEnPantalla(2)">2</button>
+            <button type="button" class="btn btn-light border" onclick="escribirEnPantalla(3)">3</button>
+            <button type="button" class="btn btn-warning border" onclick="escribirEnPantalla(' + ')">+</button>
           </div>
         </div>
 
         <div class="row mt-3">
           <div class="d-flex justify-content-around col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-            <button type="button" class="btn btn-light border" onclick="mostrarEnPantalla(0)">0</button>
-            <button type="button" class="btn btn-light border" onclick="mostrarEnPantalla('.')">.</button>
+            <button type="button" class="btn btn-light border" onclick="escribirEnPantalla(0)">0</button>
+            <button type="button" class="btn btn-light border" onclick="escribirEnPantalla('.')">.</button>
             <button type="button" class="btn btn-danger border" onclick="deletePantalla()">C</button>
             <button type="button" class="btn btn-success border" onclick="mostrarResultado()">=</button>
           </div>
